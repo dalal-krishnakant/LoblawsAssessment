@@ -1,0 +1,3 @@
+<resources>
+    <dimen name="layout_padding_embedded">16dp</dimen>
+</resources>
