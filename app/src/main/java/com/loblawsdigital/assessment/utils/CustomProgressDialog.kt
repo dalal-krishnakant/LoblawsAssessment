@@ -1,8 +1,10 @@
 package com.loblawsdigital.assessment.utils
 
+import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
 import com.loblawsdigital.assessment.R
+
 
 internal class CustomProgressDialog(private val context: Context) {
 
@@ -30,7 +32,10 @@ internal class CustomProgressDialog(private val context: Context) {
         if (alertDialog == null) {
             prepareAlertDialog()
         }
-        alertDialog?.show();
+
+        if (!(context as Activity).isFinishing) {
+            alertDialog?.show()
+        }
     }
 
     fun dismissAlertDialog() {
