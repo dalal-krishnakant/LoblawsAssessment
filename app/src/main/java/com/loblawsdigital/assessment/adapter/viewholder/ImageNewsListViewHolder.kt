@@ -20,15 +20,22 @@ class ImageNewsListViewHolder(parent: ViewGroup, layoutId: Int) : BaseRecyclerVi
     }
 
     override fun onBind(item: NewsItemDataModel) {
-        val imageUrl = item.data.secureMedia?.oembed?.thumbnailUrl
+        if (this::newsItemTitle.isInitialized) {
+            newsItemTitle.text = item.data.newsTitle
+        }
 
-        imageUrl?.let {
-            Glide.with(newsItemImage.context)
-                .load(imageUrl)
-                .centerCrop()
-                .placeholder(R.drawable.ic_launcher_background)
-                .dontAnimate()
-                .into(newsItemImage)
+        if (this::newsItemImage.isInitialized) {
+            val imageUrl =
+                item.data.secureMedia?.oembed?.thumbnailUrl ?: "https://i.stack.imgur.com/VW0Qz.png"
+
+            imageUrl?.let {
+                Glide.with(newsItemImage.context)
+                    .load(imageUrl)
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .dontAnimate()
+                    .into(newsItemImage)
+            }
         }
     }
 }
