@@ -5,7 +5,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.google.gson.Gson
-import com.loblawsdigital.assessment.dto.LatestNewsDtoModel
+import com.loblawsdigital.assessment.datamodel.LatestNewsDataModel
 import com.loblawsdigital.assessment.utils.CustomProgressDialog
 
 class FetchKotlinNewsRequest(private val context: Context) {
@@ -19,7 +19,7 @@ class FetchKotlinNewsRequest(private val context: Context) {
             Request.Method.GET, networkUrl, null,
             Response.Listener { response ->
                 getCustomLoader().dismissAlertDialog()
-                var responseModel = Gson().fromJson(response.toString(), LatestNewsDtoModel::class.java)
+                val responseModel = Gson().fromJson(response.toString(), LatestNewsDataModel::class.java)
                 listener.responseSuccess(requestCode, responseModel)
             },
             Response.ErrorListener { error ->

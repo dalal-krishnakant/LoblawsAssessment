@@ -9,20 +9,5 @@
         android:id="@+id/NewsListFragment"
         android:name="com.loblawsdigital.assessment.KotlinNewsListFragment"
         android:label="@string/news_list_fragment_label"
-        tools:layout="@layout/fragment_kotlin_news_list">
-
-        <action
-            android:id="@+id/action_NewsListFragment_to_NewsDetailsFragment"
-            app:destination="@id/NewsDetailsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/NewsDetailsFragment"
-        android:name="com.loblawsdigital.assessment.KotlinNewsDetailsFragment"
-        android:label="@string/news_details_fragment_label"
-        tools:layout="@layout/fragment_kotlin_news_details">
-
-        <action
-            android:id="@+id/action_NewsDetailsFragment_to_NewsListFragment"
-            app:destination="@id/NewsListFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_kotlin_news_list" />
 </navigation>

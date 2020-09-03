@@ -17,7 +17,7 @@ internal class ConnectionManager(private val context: Context) {
 
         fun getInstance(context: Context): ConnectionManager =
             connectionManager ?: synchronized(this) {
-                connectionManager ?: ConnectionManager(context).also { connectionManager = it }
+                connectionManager ?: ConnectionManager(context.applicationContext).also { connectionManager = it }
             }
     }
 

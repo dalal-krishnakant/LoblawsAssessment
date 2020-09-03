@@ -1,3 +1,11 @@
 <resources>
-    <dimen name="layout_padding_embedded">16dp</dimen>
+    <dimen name="layout_card_view_elevation">3dp</dimen>
+    <dimen name="layout_card_view_corners">4dp</dimen>
+
+    <dimen name="layout_padding_embedded_small">5dp</dimen>
+    <dimen name="layout_padding_embedded">10dp</dimen>
+    <dimen name="layout_padding_embedded_medium">15dp</dimen>
+    <dimen name="layout_padding_embedded_large">20dp</dimen>
+
+    <dimen name="layout_image_view_height">180dp</dimen>
 </resources>
